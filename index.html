@@ -13,6 +13,44 @@
     <!--[if lt IE 9]>
         <script src="https://craig.global.ssl.fastly.net/js/html5.js?7fc9a"></script>
     <![endif]-->
+    <style>
+      kbd {
+        padding:0.1em 0.6em;
+        border:1px solid #ccc;
+        font-size:11px;
+        font-family:Arial,Helvetica,sans-serif;
+        background-color:#f7f7f7;
+        color:#333;
+        -moz-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
+        -webkit-box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
+        box-shadow:0 1px 0px rgba(0, 0, 0, 0.2),0 0 0 2px #ffffff inset;
+        -moz-border-radius:3px;
+        -webkit-border-radius:3px;
+        border-radius:3px;
+        display:inline-block;
+        margin:0 0.1em;
+        text-shadow:0 1px 0 #fff;
+        line-height:1.4;
+        white-space:nowrap;
+      }
+      h1 kbd {
+        font-size: 1.4em;
+        color: #000;
+        border-color: #000;
+        border-width: 3px;
+        border-radius: 6px;
+        -moz-box-shadow:3px 3px 0px rgba(0, 0, 0, 0.8),0 0 0 2px #ffffff inset;
+        -webkit-box-shadow:3px 3px 0px rgba(0, 0, 0, 0.8),0 0 0 2px #ffffff inset;
+        box-shadow:3px 3px 0px rgba(0, 0, 0, 0.8),0 0 0 2px #ffffff inset;
+      }
+      h1 kbd.highlight {
+        background: #222;
+        color: #FFF;
+        -moz-box-shadow:3px 3px 0px rgba(0, 0, 0, 0.8),0 0 0 2px #111 inset;
+        -webkit-box-shadow:3px 3px 0px rgba(0, 0, 0, 0.8),0 0 0 2px #111 inset;
+        box-shadow:3px 3px 0px rgba(0, 0, 0, 0.8),0 0 0 2px #111 inset;
+      }
+    </style>
     <script>
         function supportsSVG() {
             return !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect;
@@ -22,7 +60,7 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1><a id="logo" href="/killing/mice">Mousetrap</a></h1>
+            <h1><a href="./"><kbd class="m">M</kbd><kbd class="o">O</kbd><kbd class="u">U</kbd><kbd class="s">S</kbd><kbd class="e">E</kbd><kbd class="t">T</kbd><kbd class="r">R</kbd><kbd class="a">A</kbd><kbd class="p">P</kbd></a></h1>
             <a target="_blank" href="https://github.com/ccampbell/mousetrap"><img class="github" src="https://raw.githubusercontent.com/aral/fork-me-on-github-retina-ribbons/2936ce7e8df85f9996822f520e4f007a12cdc0d5/images-after-imageoptim/fork-me-right-cerulean@2x.png" alt="Fork me on GitHub"></a>
             <p class="intro">A simple library for handling keyboard shortcuts in Javascript.<br>
                 Try pressing some of the keys here:</p>
@@ -73,13 +111,13 @@
 
         <h2 id="keys">Supported Keys</h2>
 
-        <p>For modifier keys you can use <code>shift</code>, <code>ctrl</code>, <code>alt</code>, or <code>meta</code>.</p>
+        <p>For modifier keys you can use <kbd>shift</kbd>, <kbd>ctrl</kbd>, <kbd>alt</kbd>, or <kbd>meta</kbd>.</p>
 
-        <p>You can substitute <code>option</code> for <code>alt</code> and <code>command</code> for <code>meta</code>.</p>
+        <p>You can substitute <kbd>option</kbd> for <kbd>alt</kbd> and <kbd>command</kbd> for <kbd>meta</kbd>.</p>
 
-        <p>Other special keys are <code>backspace</code>, <code>tab</code>, <code>enter</code>, <code>return</code>, <code>capslock</code>, <code>esc</code>, <code>escape</code>, <code>space</code>, <code>pageup</code>, <code>pagedown</code>, <code>end</code>, <code>home</code>, <code>left</code>, <code>up</code>, <code>right</code>, <code>down</code>, <code>ins</code>, <code>del</code>, and <code>plus</code>.</p>
+        <p>Other special keys are <kbd>backspace</kbd>, <kbd>tab</kbd>, <kbd>enter</kbd>, <kbd>return</kbd>, <kbd>capslock</kbd>, <kbd>esc</kbd>, <kbd>escape</kbd>, <kbd>space</kbd>, <kbd>pageup</kbd>, <kbd>pagedown</kbd>, <kbd>end</kbd>, <kbd>home</kbd>, <kbd>left</kbd>, <kbd>up</kbd>, <kbd>right</kbd>, <kbd>down</kbd>, <kbd>ins</kbd>, <kbd>del</kbd>, and <kbd>plus</kbd>.</p>
 
-        <p>Any other key you should be able to reference by name like <code>a</code>, <code>/</code>, <code>$</code>, <code>*</code>, or <code>=</code>.</p>
+        <p>Any other key you should be able to reference by name like <kbd>a</kbd>, <kbd>/</kbd>, <kbd>$</kbd>, <kbd>*</kbd>, or <kbd>=</kbd>.</p>
 
         <h2 id="api">API Reference</h2>
 
@@ -117,13 +155,13 @@
     _saveDraft();
 });</code></pre>
 
-        <p>Mousetrap <code>1.4</code> introduced a generic <code>mod</code> helper which lets you set cross platform shortcuts.<p>
+        <p>Mousetrap <code>1.4</code> introduced a generic <kbd>mod</kbd> helper which lets you set cross platform shortcuts.<p>
 
         <pre><code data-language="javascript">Mousetrap.bind('mod+s', _saveDraft);</code></pre>
 
-        <p>On Mac this ends up mapping to <code>command+s</code> whereas on Windows and Linux it maps to <code>ctrl+s</code>.</p>
+        <p>On Mac this ends up mapping to <kbd>command</kbd> + <kbd>s</kbd> whereas on Windows and Linux it maps to <kbd>ctrl</kbd> + <kbd>s</kbd>.</p>
 
-        <p>This differs from the array example above because there both <code>ctrl+s</code> and <code>command+s</code> will trigger save on Mac whereas with the <code>mod</code> helper only <code>command+s</code> will.</p>
+        <p>This differs from the array example above because there both <kbd>ctrl</kbd> + <kbd>s</kbd> and <kbd>command</kbd> + <kbd>s</kbd> will trigger save on Mac whereas with the <kbd>mod</kbd> helper only <kbd>command</kbd> + <kbd>s</kbd> will.</p>
 
         <h4 id="api.bind.sequence">Sequence of keys</h4>
 
@@ -137,7 +175,7 @@
 
         <p>Any key events that would normally fire for keys within a sequence will not fire if they are pressed within the context of that sequence.</p>
 
-        <p>For example if you have a keydown listener for the <code>o</code> key and you press <code>o</code> as part of the sequence above, the event for <code>o</code> on its own will not fire.  As soon as the sequence is broken it will fire again.</p>
+        <p>For example if you have a keydown listener for the <kbd>o</kbd> key and you press <kbd>o</kbd> as part of the sequence above, the event for <kbd>o</kbd> on its own will not fire.  As soon as the sequence is broken it will fire again.</p>
 
         <p>It is important to note that Mousetrap can get very confused if you have a single key handler that uses the same key that a sequence starts with.  This is because it can't tell if you are starting the sequence or if you are pressing that key on its own.</p>
 
@@ -145,7 +183,7 @@
 
         <pre><code data-language="javascript">Mousetrap.bind('?', function() { alert('keyboard shortcuts'); });</code></pre>
 
-        <p>Keys that require <code>shift</code> are handled magically for you.  They should just work.  With <code>keypress</code> events they will try to match the character and for <code>keyup</code> and <code>keydown</code> there is a mapping to allow them to work.</p>
+        <p>Keys that require <kbd>shift</kbd> are handled magically for you.  They should just work.  With <code>keypress</code> events they will try to match the character and for <code>keyup</code> and <code>keydown</code> there is a mapping to allow them to work.</p>
 
         <p>Note that <code>keypress</code> is the most reliable for non US keyboards</p>
 
@@ -177,7 +215,7 @@
 
         <p>This is not usually a good practice, but sometimes you may want to overwrite the default behavior of a keyboard combination in the browser.</p>
 
-        <p>For example let's say you want to focus a form input without typing that key into it or you have a text input that you want to save when the user presses <code>ctrl+s</code>.  You have a couple ways you can achieve this.</p>
+        <p>For example let's say you want to focus a form input without typing that key into it or you have a text input that you want to save when the user presses <kbd>ctrl</kbd> + <kbd>s</kbd>.  You have a couple ways you can achieve this.</p>
 
         <p>You can explicitly prevent the default behavior:</p>
 
@@ -283,7 +321,7 @@ var mousetrap = new Mousetrap(form);
 mousetrap.bind('mod+s', _handleSave);
 mousetrap.bind('mod+z', _handleUndo);</code></pre>
 
-        <p>Any event triggered from a child element of the element you bound to will bubble up.  This means in the example above, if you press <code>command+s</code> in a text area inside your form the callback will still fire.</p>
+        <p>Any event triggered from a child element of the element you bound to will bubble up.  This means in the example above, if you press <kbd>command</kbd> + <kbd>s</kbd> in a text area inside your form the callback will still fire.</p>
 
         <p>So the default rules about events not firing inside of a textarea or input do <strong>NOT</strong> apply when Mousetrap is attached to a specific element.</p>
 
@@ -319,7 +357,7 @@ mousetrap.bind('mod+z', _handleUndo);</code></pre>
     _save();
 });</code></pre>
 
-        <p>This means that a keyboard event bound using <code>Mousetrap.bind</code> will only work outside of form input fields, but using <code>Moustrap.bindGlobal</code> will work in both places.</p>
+        <p>This means that a keyboard event bound using <code>Mousetrap.bind</code> will only work outside of form input fields, but using <code>Mousetrap.bindGlobal</code> will work in both places.</p>
 
         <p>If you wanted to create keyboard shortcuts that only work when you are inside a specific textarea you can do that too by creating your own extension.</p>
 
@@ -384,6 +422,7 @@ Mousetrap.unpause();</code></pre>
     <div class="footer">
         <p>created by <a href="/">Craig Campbell</a> in 2012-2015</p>
     </div>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="js/rainbow-custom.min.js"></script>
     <script src="mousetrap.js"></script>
     <script>
@@ -447,6 +486,11 @@ Mousetrap.unpause();</code></pre>
             // check out my band
             Mousetrap.bind('space command', function() {
                 window.location = 'http://spacecommandmusic.com';
+            });
+            
+            Mousetrap.bind(['m','o','u','s','e','t','r','a','p'], function(e) {
+                $('h1 kbd.'+e.key.toLowerCase())
+                    .toggleClass('highlight');
             });
         }) ();
     </script>
